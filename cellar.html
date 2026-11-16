@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Cantina — Osteria Aurelia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="brand">OSTERIA AURELIA</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="cellar.html" class="active">Cellar</a></li>
+        <li><a href="contact.html">Reservations</a></li>
+      </ul>
+      <button class="nav-action" onclick="checkoutAlert()">
+        Selection (<span id="navCartCount">0</span>)
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <p class="eyebrow">SOMMELIER CURATION</p>
+      <h1>La Cantina</h1>
+    </section>
+
+    <!-- Interactive Sommelier Pairing Feature -->
+    <section class="container">
+      <div class="pairing-box">
+        <p class="eyebrow">BESPOKE PAIRING CONCIERGE</p>
+        <h2>Match a Vintage to Your Course</h2>
+        <p class="subtitle">Select a signature dish from our kitchen to reveal our head sommelier’s cellar pairing.</p>
+
+        <div class="pairing-controls">
+          <select id="dishSelector" aria-label="Select a dish">
+            <option value="">— Choose Your Dish —</option>
+            <option value="carbonara">Spaghetti Carbonara ($14.00)</option>
+            <option value="margherita">Margherita Verace Pizza ($12.50)</option>
+            <option value="lasagna">Lasagna alla Bolognese ($16.00)</option>
+            <option value="alfredo">Fettuccine Alfredo ($13.50)</option>
+            <option value="risotto">Risotto ai Porcini ($15.00)</option>
+            <option value="tiramisu">Tiramisù Classico ($7.50)</option>
+          </select>
+          <button class="btn-dark" onclick="suggestWinePairing()">Reveal Pairing</button>
+        </div>
+      </div>
+
+      <!-- Featured Cellar Bottles -->
+      <div class="section-spacer">
+        <div class="section-intro">
+          <p class="eyebrow">ESTATE BOTTLES</p>
+          <h2>Reserve Vintages</h2>
+        </div>
+
+        <div class="editorial-grid">
+          <article class="dish-card">
+            <div class="img-frame">
+              <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=700&auto=format&fit=crop" alt="Barolo DOCG Red Wine">
+            </div>
+            <div class="dish-meta">
+              <h3>Barolo Riserva 2018</h3>
+              <span class="price">$18 / glass</span>
+            </div>
+            <p class="dish-desc">Piemonte • Nebbiolo. Notes of dried rose petal, wild cherry, white truffle, and velvety tannins.</p>
+            <button class="btn-minimal" onclick="placeOrder('Barolo Riserva 2018 (Glass)', 18.00)">Add Glass to Selection</button>
+          </article>
+
+          <article class="dish-card">
+            <div class="img-frame">
+              <img src="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=700&auto=format&fit=crop" alt="Etna Bianco White Wine">
+            </div>
+            <div class="dish-meta">
+              <h3>Etna Bianco Superiore 2021</h3>
+              <span class="price">$15 / glass</span>
+            </div>
+            <p class="dish-desc">Sicilia • Carricante. Crisp volcanic minerality, Meyer lemon blossom, and toasted almond finish.</p>
+            <button class="btn-minimal" onclick="placeOrder('Etna Bianco 2021 (Glass)', 15.00)">Add Glass to Selection</button>
+          </article>
+
+          <article class="dish-card">
+            <div class="img-frame">
+              <img src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=700&auto=format&fit=crop" alt="Vin Santo Dessert Wine">
+            </div>
+            <div class="dish-meta">
+              <h3>Vin Santo del Chianti 2015</h3>
+              <span class="price">$14 / glass</span>
+            </div>
+            <p class="dish-desc">Toscana • Trebbiano & Malvasia. Amber-hued nectar with roasted hazelnut, fig, and honeyed espresso.</p>
+            <button class="btn-minimal" onclick="placeOrder('Vin Santo 2015 (Glass)', 14.00)">Add Glass to Selection</button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="nav-container">
+      <span>OSTERIA AURELIA</span>
+      <span>248 Via Roma • Open Tue–Sun from 5:30 PM</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
