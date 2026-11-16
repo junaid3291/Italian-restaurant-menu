@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Osteria Aurelia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="brand">OSTERIA AURELIA</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="about.html">Philosophy</a></li>
+        <li><a href="contact.html">Reservations</a></li>
+      </ul>
+      <button class="nav-action" onclick="checkoutAlert()">
+        Selection (<span id="navCartCount">0</span>)
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <p class="eyebrow">AUTUMN / WINTER COLLECTION</p>
+      <h1>La Carta</h1>
+    </section>
+
+    <section class="container">
+      <!-- Subtle Minimalist Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="tab-btn active" onclick="filterMenu('all', this)">All Courses</button>
+        <button class="tab-btn" onclick="filterMenu('pasta', this)">Primi & Mains</button>
+        <button class="tab-btn" onclick="filterMenu('pizza', this)">Forno a Legna</button>
+        <button class="tab-btn" onclick="filterMenu('dessert', this)">Dolci</button>
+      </div>
+
+      <!-- Visual Gallery Grid -->
+      <div class="editorial-grid" id="menuGrid">
+        <article class="dish-card menu-item" data-category="pasta">
+          <div class="img-frame">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=700&auto=format&fit=crop" alt="Spaghetti Carbonara">
+          </div>
+          <div class="dish-meta">
+            <h3>Spaghetti Carbonara</h3>
+            <span class="price">$14.00</span>
+          </div>
+          <p class="dish-desc">Artisanal spaghetti, crispy guanciale, organic egg yolk emulsion, Pecorino Romano DOP.</p>
+          <button class="btn-minimal" onclick="placeOrder('Spaghetti Carbonara', 14.00)">Order Course</button>
+        </article>
+
+        <article class="dish-card menu-item" data-category="pizza">
+          <div class="img-frame">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=700&auto=format&fit=crop" alt="Margherita Pizza">
+          </div>
+          <div class="dish-meta">
+            <h3>Margherita Pizza</h3>
+            <span class="price">$12.50</span>
+          </div>
+          <p class="dish-desc">Wood-fired sourdough crust, crushed San Marzano tomatoes, fior di latte, sweet basil.</p>
+          <button class="btn-minimal" onclick="placeOrder('Margherita Pizza', 12.50)">Order Course</button>
+        </article>
+
+        <article class="dish-card menu-item" data-category="pasta">
+          <div class="img-frame">
+            <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=700&auto=format&fit=crop" alt="Lasagna">
+          </div>
+          <div class="dish-meta">
+            <h3>Lasagna alla Bolognese</h3>
+            <span class="price">$16.00</span>
+          </div>
+          <p class="dish-desc">Hand-rolled spinach egg pasta, 8-hour braised beef ragù, nutmeg béchamel, Parmigiano.</p>
+          <button class="btn-minimal" onclick="placeOrder('Lasagna', 16.00)">Order Course</button>
+        </article>
+
+        <article class="dish-card menu-item" data-category="pasta">
+          <div class="img-frame">
+            <img src="https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=700&auto=format&fit=crop" alt="Fettuccine Alfredo">
+          </div>
+          <div class="dish-meta">
+            <h3>Fettuccine Alfredo</h3>
+            <span class="price">$13.50</span>
+          </div>
+          <p class="dish-desc">Fresh ribbon pasta emulsified with cultured Alpine butter and 24-month aged Parmigiano Reggiano.</p>
+          <button class="btn-minimal" onclick="placeOrder('Fettuccine Alfredo', 13.50)">Order Course</button>
+        </article>
+
+        <article class="dish-card menu-item" data-category="pasta">
+          <div class="img-frame">
+            <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=700&auto=format&fit=crop" alt="Mushroom Risotto">
+          </div>
+          <div class="dish-meta">
+            <h3>Risotto ai Porcini</h3>
+            <span class="price">$15.00</span>
+          </div>
+          <p class="dish-desc">Acquerello Carnaroli rice, wild Tuscan porcini mushrooms, aged white wine, white truffle essence.</p>
+          <button class="btn-minimal" onclick="placeOrder('Risotto', 15.00)">Order Course</button>
+        </article>
+
+        <article class="dish-card menu-item" data-category="dessert">
+          <div class="img-frame">
+            <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=700&auto=format&fit=crop" alt="Tiramisu">
+          </div>
+          <div class="dish-meta">
+            <h3>Tiramisu</h3>
+            <span class="price">$7.50</span>
+          </div>
+          <p class="dish-desc">House-baked ladyfingers steeped in dark roast espresso, airy mascarpone mousse, bitter cocoa.</p>
+          <button class="btn-minimal" onclick="placeOrder('Tiramisu', 7.50)">Order Course</button>
+        </article>
+      </div>
+
+      <!-- Fine-Dining Clean Price Ledger -->
+      <div class="ledger-section">
+        <div class="section-intro">
+          <p class="eyebrow">COMPLETE LEDGER</p>
+          <h2>Tasting & A La Carte Index</h2>
+        </div>
+
+        <table class="fine-table">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Origin / Notes</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Spaghetti Carbonara</td>
+              <td>Lazio Tradition • Guanciale & Pecorino</td>
+              <td>$14.00</td>
+              <td class="align-right"><button class="btn-text" onclick="placeOrder('Spaghetti Carbonara', 14.00)">+ Select</button></td>
+            </tr>
+            <tr>
+              <td>Margherita Pizza</td>
+              <td>Napoli • Wood-Fired 480°C</td>
+              <td>$12.50</td>
+              <td class="align-right"><button class="btn-text" onclick="placeOrder('Margherita Pizza', 12.50)">+ Select</button></td>
+            </tr>
+            <tr>
+              <td>Lasagna</td>
+              <td>Emilia-Romagna • Slow Braised</td>
+              <td>$16.00</td>
+              <td class="align-right"><button class="btn-text" onclick="placeOrder('Lasagna', 16.00)">+ Select</button></td>
+            </tr>
+            <tr>
+              <td>Fettuccine Alfredo</td>
+              <td>Roma • 24-Month Parmigiano</td>
+              <td>$13.50</td>
+              <td class="align-right"><button class="btn-text" onclick="placeOrder('Fettuccine Alfredo', 13.50)">+ Select</button></td>
+            </tr>
+            <tr>
+              <td>Risotto</td>
+              <td>Piemonte • Carnaroli & Wild Porcini</td>
+              <td>$15.00</td>
+              <td class="align-right"><button class="btn-text" onclick="placeOrder('Risotto', 15.00)">+ Select</button></td>
+            </tr>
+            <tr>
+              <td>Tiramisu</td>
+              <td>Veneto • Espresso & Mascarpone</td>
+              <td>$7.50</td>
+              <td class="align-right"><button class="btn-text" onclick="placeOrder('Tiramisu', 7.50)">+ Select</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="nav-container">
+      <span>OSTERIA AURELIA</span>
+      <span>248 Via Roma • Open Tue–Sun from 5:30 PM</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
