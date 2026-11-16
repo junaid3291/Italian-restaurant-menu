@@ -1,50 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Italian Menu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osteria Aurelia — Fine Italian Gastronomy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body bgcolor="lightyellow">
+<body>
 
-  <h1>Italian Restaurant Menu</h1>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="brand">OSTERIA AURELIA</a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">Philosophy</a></li>
+        <li><a href="contact.html">Reservations</a></li>
+      </ul>
+      <button class="nav-action" onclick="checkoutAlert()">
+        Selection (<span id="navCartCount">0</span>)
+      </button>
+    </nav>
+  </header>
 
-  <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400" alt="Italian Pasta" width="300" height="200">
+  <main>
+    <!-- Minimalist Split Hero -->
+    <section class="hero-editorial">
+      <div class="hero-text">
+        <p class="eyebrow">MILANO • ROMA • FIRENZE</p>
+        <h1>Quiet luxury on every plate.</h1>
+        <p class="subtitle">Seasonal ingredients, hand-rolled pasta, and wood-fired simplicity curated for an unhurried evening.</p>
+        <div class="action-row">
+          <a href="menu.html" class="btn-dark">View Tasting & Menu</a>
+          <a href="contact.html" class="btn-link">Reserve a Table &rarr;</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=900&auto=format&fit=crop" alt="Artisanal Italian Pasta">
+      </div>
+    </section>
 
-  <br><br>
+    <!-- Curated Tasting Highlights -->
+    <section class="section-spacer">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">CURATED HIGHLIGHTS</p>
+          <h2>Evening Signatures</h2>
+        </div>
 
-  <table border="1" cellpadding="8" cellspacing="0">
-    <tr>
-      <th>Dish Name</th>
-      <th>Price</th>
-    </tr>
-    <tr>
-      <td>Spaghetti Carbonara</td>
-      <td>$14.00</td>
-    </tr>
-    <tr>
-      <td>Margherita Pizza</td>
-      <td>$12.50</td>
-    </tr>
-    <tr>
-      <td>Lasagna</td>
-      <td>$16.00</td>
-    </tr>
-    <tr>
-      <td>Fettuccine Alfredo</td>
-      <td>$13.50</td>
-    </tr>
-    <tr>
-      <td>Risotto</td>
-      <td>$15.00</td>
-    </tr>
-    <tr>
-      <td>Tiramisu</td>
-      <td>$7.50</td>
-    </tr>
-  </table>
+        <div class="editorial-grid">
+          <article class="dish-card">
+            <div class="img-frame">
+              <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=700&auto=format&fit=crop" alt="Spaghetti Carbonara">
+            </div>
+            <div class="dish-meta">
+              <h3>Spaghetti Carbonara</h3>
+              <span class="price">$14.00</span>
+            </div>
+            <p class="dish-desc">Bronze-die spaghetti, cured guanciale, organic pasture egg yolk, 36-month Pecorino Romano.</p>
+            <button class="btn-minimal" onclick="placeOrder('Spaghetti Carbonara', 14.00)">Add to Selection</button>
+          </article>
 
-  <br>
+          <article class="dish-card">
+            <div class="img-frame">
+              <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=700&auto=format&fit=crop" alt="Margherita Pizza">
+            </div>
+            <div class="dish-meta">
+              <h3>Margherita Verace</h3>
+              <span class="price">$12.50</span>
+            </div>
+            <p class="dish-desc">72-hour naturally leavened dough, crushed San Marzano DOP tomatoes, fior di latte, cold-pressed olive oil.</p>
+            <button class="btn-minimal" onclick="placeOrder('Margherita Pizza', 12.50)">Add to Selection</button>
+          </article>
 
-  <button onclick="alert('Order placed!')">Order</button>
+          <article class="dish-card">
+            <div class="img-frame">
+              <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=700&auto=format&fit=crop" alt="Tiramisu">
+            </div>
+            <div class="dish-meta">
+              <h3>Tiramisù Classico</h3>
+              <span class="price">$7.50</span>
+            </div>
+            <p class="dish-desc">Single-origin espresso soaked savoiardi, whipped Lombardy mascarpone, Valrhona cocoa dusting.</p>
+            <button class="btn-minimal" onclick="placeOrder('Tiramisu', 7.50)">Add to Selection</button>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- Minimalist Sommelier Note -->
+    <section class="sommelier-strip">
+      <div class="container narrow">
+        <p class="eyebrow">PRIVATE CELLAR</p>
+        <blockquote>“A memorable meal is never rushed; it unfolds course by course with honest wine and quiet conversation.”</blockquote>
+        <button class="btn-minimal" onclick="showAlert('Sommelier Pairing List: 2018 Barolo DOCG ($18/glass) & 2021 Etna Bianco ($15/glass). Ask your server for the full cellar book.')">
+          Explore Wine Pairings
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="nav-container">
+      <span>OSTERIA AURELIA</span>
+      <span>248 Via Roma • Open Tue–Sun from 5:30 PM</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
