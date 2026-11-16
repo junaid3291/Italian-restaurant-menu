@@ -1,36 +1,23 @@
-# Italian-restaurant-menu
-A stylish and responsive Italian Restaurant Menu Website built using HTML, CSS, and JavaScript. Features an elegant design, delicious food menu, and an easy-to-use interface to explore authentic Italian dishes.
+# Osteria Aurelia — Fine-Dining Italian Restaurant
 
+## Student Information
+* **Name:** Junaid
+* **Roll Number:** 26i-3291
+* **Section:** BSSE-C
 
-# Osteria Aurelia — Fine Italian Gastronomy
+## Project Overview
+* **Theme:** Minimalist Fine-Dining Italian Restaurant
+* **Description:** A responsive, editorial-style multi-page web application for Osteria Aurelia featuring curated Italian courses, interactive sommelier wine pairings, and table reservations.
 
-A minimalist, responsive, multi-page static website designed for **Osteria Aurelia**, an authentic Italian fine-dining restaurant. Built with semantic HTML5, modern CSS3, and vanilla JavaScript—zero external frameworks or build tools required.
+## Website Pages
+* **Home (`index.html`):** Split editorial hero, signature dishes showcase, and sommelier tasting notes.
+* **Menu (`menu.html`):** Full à la carte menu with category filtering (*Primi & Mains, Forno a Legna, Dolci*) and a complete price ledger.
+* **Wine Cellar (`cellar.html`):** Estate reserve vintages and an interactive Sommelier Wine Pairing Matcher.
+* **Philosophy (`about.html`):** Culinary heritage, ingredient sourcing, and chef leadership profiles.
+* **Reservations (`contact.html`):** Minimalist table booking form and restaurant concierge details.
 
----
+## AI Tools Used
+* **Google Gemini:** Assisted with HTML5/CSS3/JavaScript architecture, minimalist fine-dining UI styling, interactive alert logic, and documentation.
 
-## ✨ Features
-
-- **Editorial Fine-Dining Aesthetic:** Warm alabaster (`#faf8f5`) and charcoal (`#1c1b1a`) color palette paired with high-contrast serif typography (*Cormorant Garamond*) and clean sans-serif body text (*Plus Jakarta Sans*).
-- **Multi-Page Architecture:**
-  - `index.html` — Split editorial hero, curated signature dishes, and sommelier quote strip.
-  - `menu.html` — Interactive course category filtering (*Primi & Mains, Forno a Legna, Dolci*) and a complete à la carte price ledger.
-  - `cellar.html` — Estate reserve vintages and an interactive **Sommelier Wine Pairing Matcher**.
-  - `about.html` — Culinary philosophy and leadership profiles.
-  - `contact.html` — Minimalist underline reservation form and concierge details.
-- **Persistent Selection Bag:** Uses `sessionStorage` to track selected courses and running totals across pages, complete with interactive order and checkout alerts.
-- **Zero-Config Deployment:** Ready to deploy directly to GitHub Pages, Netlify, or Vercel.
-
----
-
-## 📁 Project Structure
-
-```text
-osteria-aurelia/
-├── index.html       # Main landing page
-├── menu.html        # Full menu with category filters & price ledger
-├── cellar.html      # Wine cellar & interactive sommelier pairing tool
-├── about.html       # Culinary philosophy & chef profiles
-├── contact.html     # Table reservation form & location info
-├── style.css        # Shared minimalist design system
-├── script.js        # Cart persistence, wine pairing logic & alert handlers
-└── README.md        # Project documentation
+## Live Website
+* **GitHub Pages URL:** [https://junaid3291.github.io/Italian-restaurant-menu/](https://junaid3291.github.io/Italian-restaurant-menu/)
