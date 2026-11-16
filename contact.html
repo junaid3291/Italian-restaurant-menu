@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations — Osteria Aurelia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="brand">OSTERIA AURELIA</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">Philosophy</a></li>
+        <li><a href="contact.html" class="active">Reservations</a></li>
+      </ul>
+      <button class="nav-action" onclick="checkoutAlert()">
+        Selection (<span id="navCartCount">0</span>)
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <p class="eyebrow">JOIN US FOR DINNER</p>
+      <h1>Reservations</h1>
+    </section>
+
+    <section class="container">
+      <div class="editorial-split">
+        <!-- Minimalist Underline Form -->
+        <div class="minimal-form-wrap">
+          <h2>Request a Table</h2>
+          <form id="reservationForm">
+            <div class="field">
+              <label for="guestName">Guest Name</label>
+              <input type="text" id="guestName" placeholder="Clara Bellini" required>
+            </div>
+
+            <div class="field">
+              <label for="guestEmail">Email Address</label>
+              <input type="email" id="guestEmail" placeholder="clara@domain.com" required>
+            </div>
+
+            <div class="field-pair">
+              <div class="field">
+                <label for="resDate">Evening Date</label>
+                <input type="date" id="resDate" required>
+              </div>
+              <div class="field">
+                <label for="guestCount">Party Size</label>
+                <select id="guestCount">
+                  <option value="2 Guests">2 Guests</option>
+                  <option value="4 Guests">4 Guests</option>
+                  <option value="6 Guests">6 Guests</option>
+                  <option value="Private Table (8+)">Private Table (8+)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="specialNotes">Dietary & Seating Notes</label>
+              <textarea id="specialNotes" rows="2" placeholder="Allergies, tasting menu preference, anniversary..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-dark full-width">Confirm Reservation</button>
+          </form>
+        </div>
+
+        <!-- Concierge Details -->
+        <div class="concierge-box">
+          <div class="img-frame">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700&auto=format&fit=crop" alt="Fine Dining Table Setting">
+          </div>
+          <div class="concierge-details">
+            <p class="eyebrow">LOCATION & HOURS</p>
+            <h3>248 Via Roma, Arts District</h3>
+            <p>Tuesday – Sunday: 5:30 PM – 11:00 PM<br>Closed Mondays for cellar curation</p>
+            <p class="dress-note">Smart evening attire appreciated.</p>
+
+            <div class="action-row">
+              <button class="btn-minimal" onclick="showAlert('Concierge Desk: +1 (555) 234-8890 — Available daily after 2:00 PM.')">
+                Call Concierge
+              </button>
+              <button class="btn-text" onclick="showAlert('Valet parking is complimentary at the Via Roma entrance starting at 5:15 PM.')">
+                Valet Info &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="nav-container">
+      <span>OSTERIA AURELIA</span>
+      <span>248 Via Roma • Open Tue–Sun from 5:30 PM</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
